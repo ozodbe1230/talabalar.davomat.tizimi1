@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talabalar davomat tizimi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📋 Talabalar davomat tizimi</h1>
+      <p>Alfraganus universiteti</p>
+    </header>
+
+    <section class="card controls">
+      <div class="field">
+        <label for="date">Sana</label>
+        <input type="date" id="date">
+      </div>
+      <div class="field">
+        <label for="groupSelect">Guruh</label>
+        <select id="groupSelect"></select>
+      </div>
+      <div class="field">
+        <label for="newGroup">Yangi guruh</label>
+        <div class="row">
+          <input type="text" id="newGroup" placeholder="Masalan: 102-guruh">
+          <button id="addGroupBtn" class="btn primary">Qo'shish</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Talaba qo'shish</h2>
+      <div class="row">
+        <input type="text" id="studentName" placeholder="Talaba F.I.Sh.">
+        <button id="addStudentBtn" class="btn primary">Qo'shish</button>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat present"><span id="statPresent">0</span><small>Keldi</small></div>
+      <div class="stat late"><span id="statLate">0</span><small>Kechikdi</small></div>
+      <div class="stat absent"><span id="statAbsent">0</span><small>Kelmadi</small></div>
+      <div class="stat percent"><span id="statPercent">0%</span><small>Davomat</small></div>
+    </section>
+
+    <section class="card">
+      <div class="table-head">
+        <h2>Talabalar ro'yxati</h2>
+        <div class="row">
+          <input type="text" id="search" placeholder="🔍 Qidirish...">
+          <button id="markAllBtn" class="btn">Hammasi keldi</button>
+          <button id="exportBtn" class="btn success">⬇ CSV (Excel)</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>F.I.Sh.</th>
+              <th>Holat</th>
+              <th>Umumiy davomat</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty" hidden>Bu guruhda hali talaba yo'q.</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
